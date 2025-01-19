@@ -15,10 +15,6 @@ const JoinCard = () => {
   const [count, setCount] = useState(1);
   const [usd, setUsd] = useState(15.3);
 
-  const showToasts = () => {
-    Toast.success('Promised is resolved');
-  };
-
   const handleInputValue = phoneNumber => {
     setInputValue(phoneNumber);
   };
@@ -84,7 +80,7 @@ const JoinCard = () => {
         </View>
 
         <View style={styles.usdContainer}>
-          <View style={{justifyContent: 'start', alignItems: 'start'}}>
+          <View style={styles.leftContainer}>
             <Text style={styles.schlTxt}>Number of scholarships</Text>
             <View style={styles.btnContainer}>
               <TouchableOpacity
@@ -105,6 +101,9 @@ const JoinCard = () => {
             <Text style={styles.currSm}>month</Text>
           </View>
         </View>
+        <TouchableOpacity style={styles.startBtn}>
+          <Text style={styles.start}>Start now</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -123,7 +122,7 @@ const styles = StyleSheet.create({
     elevation: 5,
     marginTop: -80,
   },
-  phnInpt: {width: '100%', flex: 1},
+  phnInpt: {width: '100%', flex: 1, borderColor: '#bac4cf', borderRadius: 10},
   usdContainer: {
     marginTop: 0,
     flexDirection: 'row',
@@ -194,13 +193,28 @@ const styles = StyleSheet.create({
     color: '#1dc468',
     marginBottom: 10,
   },
+  leftContainer: {justifyContent: 'start', alignItems: 'start', marginTop: -10},
   input: {
-    height: 55,
+    height: 50,
     borderColor: '#bac4cf',
     borderWidth: 1,
-    marginBottom: 15,
+    marginBottom: 10,
     paddingLeft: 10,
-    borderRadius: 10,
+    borderRadius: 15,
+  },
+  startBtn: {
+    width: '100%',
+    backgroundColor: '#1dc468',
+    marginTop: 15,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingVertical: 15,
+    borderRadius: 8,
+  },
+  start: {
+    fontWeight: 'bold',
+    fontSize: 15,
+    color: 'white',
   },
 });
 
