@@ -7,6 +7,7 @@ import {
   StyleSheet,
   Dimensions,
 } from 'react-native';
+import Icon from 'react-native-vector-icons/AntDesign';
 
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
@@ -68,10 +69,7 @@ const SchoolSection = () => {
             <Image source={imgSrc} style={styles.image} />
             <Text style={styles.imgTtl}>{name}</Text>
             <View style={styles.loc}>
-              <Image
-                source={require('../../assets/images/loc.jpg')}
-                style={styles.locImg}
-              />
+              <Icon name="enviromento" color="#1dc468" size={20} />
               <Text style={styles.imgSbTtl}>{location}</Text>
             </View>
           </View>
@@ -102,26 +100,28 @@ const styles = StyleSheet.create({
   imgSbTtl: {
     fontSize: 16,
     fontWeight: 'bold',
-    marginBottom: 10,
+    marginLeft: 5,
     color: 'gray',
   },
   loc: {
     flexDirection: 'row',
     justifyContent: 'flex-start',
+    alignItems: 'center',
   },
   locImg: {
-    width: 15,
-    height: 15,
-    marginRight: 20,
+    width: 20,
+    height: 20,
+    marginRight: 10,
   },
   imgContainer: {
     width: width / 1.3,
+    marginLeft: 20,
   },
   imageSlider: {
     marginBottom: 16,
   },
   image: {
-    width: width / 1.5,
+    width: width / 1.3,
     height: height / 4,
     marginRight: 15,
     borderRadius: 10,

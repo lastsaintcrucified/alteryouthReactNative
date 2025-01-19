@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Image, StyleSheet, Dimensions} from 'react-native';
+import {View, Text, StyleSheet, Dimensions, Image} from 'react-native';
 
 const width = Dimensions.get('window').width;
 
@@ -12,7 +12,9 @@ const Association = () => {
           source={require('../../assets/images/google.png')}
           style={styles.image1}
         />
-        <Text style={styles.title}>Title 1</Text>
+        <Text style={styles.title}>
+          Winner of Google Business Group Stories
+        </Text>
       </View>
       {/* Second Div */}
       <View style={styles.divRow}>
@@ -20,11 +22,11 @@ const Association = () => {
           source={require('../../assets/images/undp.jpg')}
           style={styles.image2}
         />
-        <Text style={styles.title}>Title 2</Text>
+        <Text style={styles.title1}>"Asia Pacific SDG Enterprise Award"</Text>
       </View>
       {/* Third Div */}
       <View style={styles.divColumn}>
-        <Text style={styles.title}>Title 3</Text>
+        <Text style={styles.title}>In Association With</Text>
         <Image
           source={require('../../assets/images/expo.png')}
           style={styles.image3}
@@ -71,7 +73,13 @@ const styles = StyleSheet.create({
     margin: 20,
   },
   title: {
-    fontSize: 18,
+    fontSize: 15,
+    fontWeight: 'bold',
+    color: 'black',
+  },
+  title1: {
+    width: 150,
+    fontSize: 15,
     fontWeight: 'bold',
     color: 'black',
   },
