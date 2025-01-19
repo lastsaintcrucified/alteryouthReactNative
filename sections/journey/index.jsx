@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
-// import Video from 'react-native-video';
+import Video from 'react-native-video';
+import Icon from 'react-native-vector-icons/AntDesign';
 
 const Journey = () => {
   const [paused, setPaused] = useState(true);
@@ -11,16 +12,25 @@ const Journey = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Journey</Text>
+      <Text style={styles.title}>Embark on a scholarship journey</Text>
       <TouchableOpacity onPress={handlePlayPause} style={styles.videoContainer}>
-        {/* <Video
+        <Video
           source={require('../../assets/videos/ay_explainer.mp4')}
           style={styles.video}
           paused={paused}
           poster={require('../../assets/images/ay_video_poster.jpg')}
           resizeMode="cover"
-        /> */}
-        {paused && <Text style={styles.playButton}>Play</Text>}
+        />
+        {paused && (
+          <View style={styles.icoContainer}>
+            <Icon
+              style={styles.icon}
+              name="caretright"
+              size={40}
+              color="white"
+            />
+          </View>
+        )}
       </TouchableOpacity>
       <Text style={styles.paragraph}>
         In Bangladesh, while 98% of children enroll in school, 2 million
@@ -43,10 +53,22 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     marginVertical: 40,
   },
+  icoContainer: {
+    position: 'absolute',
+    top: '30%',
+    left: '35%',
+    width: 80,
+    height: 80,
+    borderRadius: 40,
+    backgroundColor: 'rgba(0,0,0,0.4)',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   title: {
-    fontSize: 24,
+    fontSize: 22,
     fontWeight: 'bold',
     marginBottom: 20,
+    color: 'black',
   },
   videoContainer: {
     position: 'relative',
@@ -58,20 +80,12 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
   },
-  playButton: {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: [{translateX: -50}, {translateY: -50}],
-    fontSize: 18,
-    color: '#fff',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    padding: 10,
-    borderRadius: 5,
-  },
+
   paragraph: {
     fontSize: 16,
     color: 'black',
+    textAlign: 'justify',
+    marginTop: 10,
   },
 });
 

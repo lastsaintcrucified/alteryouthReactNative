@@ -57,21 +57,18 @@ const styles = StyleSheet.create({
     width: width / 1.8,
     height: 80,
     marginBottom: 10,
-    backgroundColor: 'black',
   },
   image2: {
     width: width / 3,
     height: 180,
     marginBottom: 10,
     margin: 20,
-    backgroundColor: 'black',
   },
   image3: {
     width: width / 3,
     height: 180,
     marginBottom: 10,
     margin: 20,
-    backgroundColor: 'black',
   },
   title: {
     fontSize: 18,
